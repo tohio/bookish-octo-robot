@@ -3,10 +3,11 @@ on:
   pull_request:
     types:
       - closed
-    branches:
-      - master
+      
 jobs:
   build:
+    if_merged:
+      if: github.event.pull_request.merged == true
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
