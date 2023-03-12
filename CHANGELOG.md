@@ -8,4 +8,4 @@
 -
 
 ### Removed
--
+- Removed packag.json
