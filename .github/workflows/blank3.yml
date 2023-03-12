@@ -1,15 +1,10 @@
+name: CI
+
+# Controls when the workflow will run
 on:
-  workflow_dispatch:
-    inputs:
-      terraform_operation:
-        description: "Terraform operation: plan, apply, destroy"
-        required: true
-        default: "plan"
-        type: choice
-        options:
-          - plan
-          - apply
-          - destroy
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   terraform:
