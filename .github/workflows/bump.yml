@@ -31,6 +31,6 @@ jobs:
       with:
         tag_name: ${{ steps.version.outputs.tag }}
         release_name: ${{ steps.version.outputs.tag }}
-        body_path: CHANGELOG.MD
+        body_path: CHANGELOG.md
         draft: false
         prerelease: false
