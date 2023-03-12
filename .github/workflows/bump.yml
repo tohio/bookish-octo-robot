@@ -24,7 +24,7 @@ jobs:
     
     - name: Create tag
       id: create_tag
-      uses: actions/create-release@v1.0.6
+      uses: actions/create-release@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
