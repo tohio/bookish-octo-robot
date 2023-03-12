@@ -16,9 +16,12 @@ jobs:
       with:
         fetch-depth: '0'
         
-    - name: Changelog
-      uses: scottbrenner/generate-changelog-action@master
-      id: Changelog
+    - name: Conventional Changelog Action
+      id: changelog
+      uses: TriPSs/conventional-changelog-action@v3
+      with:
+        github-token: ${{ secrets.github_token }}
+        output-file: "false"
 
     - name: Bump version
       id: version
@@ -35,7 +38,6 @@ jobs:
       with:
         tag_name: ${{ steps.version.outputs.tag }}
         release_name: ${{ steps.version.outputs.tag }}
-        body: |
-          ${{ steps.Changelog.outputs.changelog }}
+        body: ${{ steps.changelog.outputs.clean_changelog }}
         draft: false
         prerelease: false
