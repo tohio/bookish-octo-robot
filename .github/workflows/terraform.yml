@@ -1,4 +1,4 @@
-name: CI
+name: terraform-plan
 
 # Controls when the workflow will run
 on:
